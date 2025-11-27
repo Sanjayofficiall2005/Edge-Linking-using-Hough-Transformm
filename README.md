@@ -21,50 +21,23 @@ Using Canny operator from cv2,detect the edges of the image.
 ### Step5:
 
 Using the HoughLinesP(),detect line co-ordinates for every points in the images.Using For loop,draw the lines on the found co-ordinates.Display the image.
-## Program:
-```
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-image = cv2.imread('photo.jpg') 
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  # Convert image to RGB for displaying
-plt.title("Input Image")
-plt.axis('off')
-plt.imshow(gray_image, cmap='gray')
-plt.title("Grayscale Image")
-plt.axis('off')
-edges = cv2.Canny(gray_image, 13, 130)
-
-plt.imshow(edges, cmap='gray')
-plt.title("Canny Edge Detector")
-plt.axis('off')
-lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 100, minLineLength=50, maxLineGap=10)
-
-for line in lines:
-    x1, y1, x2, y2 = line[0]  
-    cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-
-plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  
-plt.title("Result of Hough Transform")
-plt.axis('off')
-
-```
 ## Output
 
 ### Input image and grayscale image
-![alt text](image.png)
-![alt text](image-1.png)
+<img width="1606" height="462" alt="image" src="https://github.com/user-attachments/assets/b866850f-cf55-49f2-b521-a131a9aa1ba2" />
 
 
 ### Canny Edge detector output
-![alt text](image-2.png)
+<img width="1424" height="836" alt="image" src="https://github.com/user-attachments/assets/7fcfd2c5-3d87-422d-b3b8-42ab7481343d" />
 
+<img width="1606" height="322" alt="image" src="https://github.com/user-attachments/assets/64f9fc5f-5d87-4228-9f9d-81cd4628f7fe" />
+
+<img width="1606" height="462" alt="image" src="https://github.com/user-attachments/assets/a155b971-5c2f-4a17-ab22-94d842ac2fbe" />
 
 
 ### Display the result of Hough transform
-![alt text](image-3.png)
+<img width="1218" height="702" alt="image" src="https://github.com/user-attachments/assets/392d0b9f-af3d-459f-838c-18f151838b3d" />
 
-## Result:
-Thus the code to perform Edge detection using Hough Transform was written and executed successfully.
+
+### Result:
+Thus, To write a Python program to detect the lines using Hough Transform is executed successfully.
